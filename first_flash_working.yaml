@@ -13,11 +13,11 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "yourkeyhere"
+    key: "your_encryption_key"
 
 ota:
   - platform: esphome
-    password: "yourotahere"
+    password: "your_ota_password"
 
 wifi:
   ssid: !secret wifi_ssid
@@ -26,7 +26,7 @@ wifi:
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Aq--Sen66 Fallback Hotspot"
-    password: "fallbackpass"
+    password: "your_fallback_hotspot_password"
 
 i2c:
   sda: GPIO22
@@ -102,5 +102,9 @@ sensor:
 #        p: 0
 #        t1: 0
 #        t2: 0
+    co2_automatic_self_calibration: true
+    auto_cleaning:
+      enabled: true
+      interval: 7days
     store_baseline: true
     update_interval: 15s
